@@ -96,7 +96,10 @@
 
             $("#submit").click(function(){
                 var query = $("#query").val();
-                var duration = (int) $("#duration").val();
+                var duration = Number($("#duration").val());
+                if(duration < 5){
+                    duration = 5
+                }
                 var interval = duration  * 60 * 1000;
                 var per_page = 3600000 / interval;
                 var new_page = per_page * interval;
